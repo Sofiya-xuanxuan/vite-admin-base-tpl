@@ -1,0 +1,59 @@
+/* Mixins */
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin gapFn($key,$val) {
+  #{$key}-xs:$val;
+  #{$key}-s:$val*2;
+  #{$key}:$val*3;
+  #{$key}-m:$val*4;
+  #{$key}-l:$val*5;
+  #{$key}-xl:$val*6;
+}
+
+@mixin colorGroup($key,$value){
+  #{$key}: $value;
+  #{$key}-hover: lighten($value, 5%);
+  #{$key}-active: darken($value, 5%);
+  #{$key}-opacity:rgba($value, 0.1);
+  #{$key}-disabled:rgba($value, 0.5);
+}
+
+@mixin buttonCreat($type,$border){
+  @if $type == $border {
+    
+  } @else {
+    
+  }
+  color:#fff;
+  background-color:var($type,rgb(240,240,240));
+  border-color:var($border);
+  &:hover{
+    background-color:var(#{$type}-hover,rgb(230,230,230));
+  border-color:var(#{$border}-hover)
+  }
+  &:active{
+    background-color:var(#{$type}-active,rgb(220,220,220));
+    border-color:var(#{$border}-active)
+  }
+  &:focus{
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+    outline: none;
+  }
+}
+
+@mixin shadowBox($radian:4px,$width:0px) {
+  box-shadow: 0 5px 15px rgba(55,7,123,.1);
+  border-radius: $radian;
+  background: #fff;
+  border:$width solid #DFDFE0;
+  box-sizing: border-box;
+  &:hover{
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  }
+}

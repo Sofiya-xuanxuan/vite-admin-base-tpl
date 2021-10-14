@@ -1,0 +1,75 @@
+// @import './variables.scss'; // Already imported in style-resources-loader
+@import './mixins.scss'; // Already imported in style-resources-loader
+@import './transition.scss';
+@import './_variables.scss';
+@import './element-transform.scss';
+
+/* Global scss */
+html,body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family-element);
+}
+*,*:before,*:after {box-sizing: border-box;}
+#app {height: 100%;}
+a,
+a:focus,
+a:hover {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+.clearfix {
+  @include clearfix;
+}
+.flex,.flex-center{
+  display: flex;
+  align-items: center;
+}
+.flex-center{
+  justify-content: center;
+}
+.gap-s{
+  .el-col{
+    padding: 0 var(--gap);
+    margin-bottom: var(--gap-xl);
+  }
+}
+.page-router{
+  padding: var(--gap) var(--gap-l);
+}
+.page-title{
+  margin: 0;
+  font-size: 14px;
+  padding: var(--gap-m);
+  color: var(--gray-dark);
+}
+//scrollbar style
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+  /* or add it to the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+  /* or add it to the track */
+}
+
+@media only screen and (max-width: 768px){
+
+}

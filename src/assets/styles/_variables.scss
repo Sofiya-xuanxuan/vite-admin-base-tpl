@@ -1,0 +1,252 @@
+@import './mixins.scss';
+/* Variables */
+//default
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$orange: #fd7e14;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$secondary: #868e96;
+$light: #f8f9fa;
+$tiffany: #4AB7BD;
+
+//* Base color 素米蓝色风格配色
+$blue: #4E88F3;
+$red: #F7777F;
+$yellow: #F9B653;
+$green:#51CBA8;
+$dark: #404247;
+$dark2: #515154;
+$dark-gray: #858B95;
+$gray: #CED3D8;
+$gray-light:#E7EAEF;
+//$text-dark: #3E4042;
+
+// Main color
+$primary: $blue;
+$success: $green;
+$info: $dark-gray;
+$warning: $yellow;
+$danger: $red;
+$border-color:$gray-light;
+
+// Sidebar
+$sideBarWidth: 210px;
+$subMenuBg:#1f2d3d;
+$subMenuHover:#737d86;
+$subMenuActiveText:#f4f4f5;
+$menuBg:#323234;
+$menuText:#FFFFFF;
+$menuActiveText: var(--primary); // Also see settings.sidebarTextTheme
+
+//layout
+$page-padding:20px;
+$page-bg:#eff1f6;
+$--scrollbar-color:#ACB8CC;
+
+// Login page
+$lightGray: #eee;
+$darkGray:$page-bg;
+$loginBg: #fff;
+$loginCursorColor: $dark;
+
+/*theme-colors*/
+/* base scss*/
+:root{
+  /* color */
+  --blue: #{$blue};
+  --indigo: #{$indigo};
+  --purple: #{$purple};
+  --pink: #{$pink};
+  --red: #{$red};
+  --orange: #{$orange};
+  --yellow: #{$yellow};
+  --green: #{$green};
+  --teal: #{$teal};
+  --cyan: #{$cyan};
+  --white: #{$white};
+  --gray: #{$gray};
+  --gray-light: #{$gray-light};
+  --gray-dark: #{$dark-gray};
+  --secondary: #{$secondary};
+  --light: #{$light};
+  --dark: #{$dark};
+  --dark2: #{$dark2};
+
+  /* media */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  
+  /* font-family */
+  --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-family-element: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+
+  --sideBarWidth: #{$sideBarWidth};
+  --closesideBarWidth: #{-$sideBarWidth};
+  /* padding base:4px*/
+  @include gapFn('--gap',4px)
+}
+:root,.themeDefault{
+  //default-theme
+  $primaryText:#232031;
+  --white-gray:#EBEEF5;
+  --border-color-lighter:var(--white);
+  --primary-text:#{$primaryText};
+  
+  @include colorGroup('--primary',$primary);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--info',$info);
+  @include colorGroup('--warning',$warning);
+  @include colorGroup('--danger',$danger);
+
+  /* width */
+  $sideBarBg:#292e40;
+  --menu-bgcolor:#{$sideBarBg};
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  --menuBg: var(--primary);
+  --menuText: #{$white};
+  --menu-color:var(--gray);
+  --menuActiveText: #{$pink}; 
+  //--mainBG:#f9fcfe;
+  --mainBG:#f7f7fc;
+  .right-menu{
+    --menu-color:var(--gray-dark)
+  }
+  --side-item-height:44px;
+}
+
+.themeBlue{
+  $sideBarBg:#112958;
+  $primary:#3546ab;
+  --mainBG:#f6f8fc;
+  --menu-color:var(--gray);
+  --menu-bgcolor:#{$sideBarBg};
+  $success:#34c38f;
+  $danger:#f46a6a;
+  $warning:#f1b44c;
+  @include colorGroup('--primary',$primary);
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--danger',$danger);
+  @include colorGroup('--warning',$warning);
+}
+
+.themeLight{
+  $primary:#018786;
+  --mainBG:#f9f9fd;
+  //--gray:var(--gray);
+  --menu-color:var(--dark);
+  --menu-bgcolor:var(--white);
+  $sideBarBg:#fff;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+}
+
+.themeOrange{
+  color:#383874;
+  $primary:#ff650e;
+  $primaryText:#3d3367;
+  --primary-text:#{$primaryText};
+  --mainBG:#f5f5f7;
+  --gray:#8d8eb8;
+  --gray-dark:#7b87b5;
+  --menu-color:#414389;
+  --menu-bgcolor:var(--white);
+  --menu-color-icon:var(--gray);
+  $sideBarBg:#fff;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+  $success:#42a752;
+  @include colorGroup('--success',$success);
+  $danger:#e25334;
+  @include colorGroup('--danger',$danger);
+}
+
+.themeDark{
+  $primary:#646cff;
+  $success:#42a752;
+  $danger:#e25334;
+  $sideBarBg:#23325d;
+  $primaryText:#fff;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--danger',$danger);
+
+  $white:#23325d;
+  $white-gray:lighten($white, 5%);
+  --white: #{$white};
+  --white-gray:#{$white-gray};
+  --border-color-extra-light:#7b87b5;
+  --border-color-lighter:#{$white-gray};
+
+  --primary-text:#{$primaryText};
+  --mainBG:#192750;
+  --gray:#8d8eb8;
+  --gray-dark:#7b87b5;
+  --menu-color:#a8bcf8;
+  --menu-color-icon:var(--gray);
+  --color-text-regular:#8d8eb8;
+  
+  color:var(--gray);
+}
+
+.themeDarkBlue{
+  $primary:#364fcd;
+  $success:#42a752;
+  $danger:#e25334;
+  $sideBarBg:#1d1d42;
+  $primaryText:#a8bcf8;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--danger',$danger);
+
+  color:#8d8eb8;
+  --color-text-placeholder:#30305f;
+  --color-text-regular:#8d8eb8;
+  --color-text-secondary:#9696cf;
+  --border-color-lighter:#24244b;
+  --border-color-base:#171735;
+  --border-color-light:#24244b;
+  --background-color-base:var(--primary-opacity);
+  --white: #1d1d42;
+  --white-gray:#27274e;
+
+  --primary-text:#{$primaryText};
+  --mainBG:#141432;
+  --gray:#8d8eb8;
+  --gray-dark:#7b87b5;
+  --menu-color:#a8bcf8;
+  --menu-bgcolor:var(--white);
+  --menu-color-icon:var(--gray);
+
+}
+
+@media only screen and (max-width: 1440px){
+  :root{
+    /* padding:base-gap:3 */
+    @include gapFn('--gap',3px);
+  }
+}
+@media only screen and (max-width: 768px){
+  :root{
+    /* padding:base-gap:3 */
+    @include gapFn('--gap',2px);
+  }
+}
+
+// The :export directive is the magic sauce for webpack
+// https://mattferderer.com/use-sass-variables-in-typescript-and-javascript
+:export {
+  primary:$primary;
+  menuBg: $menuBg;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+}
